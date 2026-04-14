@@ -1,6 +1,6 @@
 app_name = "app_cecom"
 app_title = "App Cecom"
-app_publisher = "Nelson A. Fernandez"
+app_publisher = "Nelson Andres Fernandez"
 app_description = "App Cecom"
 app_email = "nelson.fernandez@mbcorp.mx"
 app_license = "mit"
