@@ -1,0 +1,137 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-04-15 17:01:23.289458",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "fecha",
+  "origen",
+  "fechahora_inicio_de_labores",
+  "fechahora_de_llegada",
+  "conductor",
+  "column_break_ayrg",
+  "destino",
+  "tiempo_de_la_ruta",
+  "fechahora_inicio_del_viaje",
+  "tiempo_de_viaje",
+  "section_break_tb4h",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_tb4h",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gerenciamiento de viajes",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": "GV-"
+  },
+  {
+   "default": "Today",
+   "fieldname": "fecha",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ayrg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "origen",
+   "fieldtype": "Link",
+   "label": "Origen",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "destino",
+   "fieldtype": "Link",
+   "label": "Destino",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tiempo_de_la_ruta",
+   "fieldtype": "Time",
+   "label": "Tiempo de la Ruta",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fechahora_inicio_de_labores",
+   "fieldtype": "Datetime",
+   "label": "Fecha/Hora Inicio de Labores",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fechahora_inicio_del_viaje",
+   "fieldtype": "Datetime",
+   "label": "Fecha/Hora Inicio del Viaje",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fechahora_de_llegada",
+   "fieldtype": "Datetime",
+   "label": "Fecha/Hora de Llegada",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tiempo_de_viaje",
+   "fieldtype": "Time",
+   "label": "Tiempo de Viaje",
+   "reqd": 1
+  },
+  {
+   "fieldname": "conductor",
+   "fieldtype": "Link",
+   "label": "Conductor",
+   "options": "Driver",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-15 17:14:15.280755",
+ "modified_by": "Administrator",
+ "module": "App Cecom",
+ "name": "Gerenciamiento de viajes",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
