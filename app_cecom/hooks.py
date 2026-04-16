@@ -242,3 +242,12 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {"doctype": "Client Script", "filters": [["module", "in", ["App Cecom"]]]},
+    {"doctype": "Server Script", "filters": [["module", "in", ["App Cecom"]]]},
+    #{"doctype": "Workflow", "filters": [["name", "in", ["Boleta de seguridad"]]]},
+    #{"doctype": "Notification", "filters": [["name", "in", ["Boleta de seguridad, Cerrada"]]]},
+    #{"doctype": "Workflow State", "filters": [["name", "in", ["En proceso","CERRADA"]]]},
+    #{"doctype": "Workflow Action Master", "filters": [["name", "in", ["Cerrar","Redirigir"]]]},  
+    #{"doctype": "Role", "filters": [["name", "in", ["Cerrar_Boleta_Seguridad","Elabora_Boleta_Seguridad"]]]},  
+    ]

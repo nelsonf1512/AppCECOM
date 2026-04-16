@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Gerenciamiento de viajes",
+  "enabled": 1,
+  "modified": "2026-04-16 16:32:13.330961",
+  "module": "App Cecom",
+  "name": "Gerenciamiento de viajes",
+  "script": "frappe.ui.form.on('Gerenciamiento de viajes', {\n\trefresh(frm) {\n\t\t// your code here\n\t},\n\tconductor(frm){\n        frm.set_value('departamento_de_conductor', \"\");\n\t    if (frm.doc.empleado_conductor){\n            frappe.call({\n                method: 'obtener_empleado_por_conductor',\n                args: {\n                    name: frm.doc.empleado_conductor\n                },\n                callback: function(r) {\n                    if (r.message) {\n                        console.log(1231231,r.message)\n                        frm.set_value('departamento_de_conductor', r.message.jefe_department);\n                    }\n                }\n            });\n\t    }\n\t},\n\tautorizador(frm){\n        frm.set_value('no_de_emergencia', \"\");\n        console.log(frm.doc.número_de_empleado_de_autorizador)\n\t    if (frm.doc.número_de_empleado_de_autorizador){\n            frappe.call({\n                method: 'obtener_empleado_por_conductor',\n                args: {\n                    name: frm.doc.número_de_empleado_de_autorizador\n                },\n                callback: function(r) {\n                    if (r.message) {\n                        console.log(111,r.message)\n                        frm.set_value('no_de_emergencia', r.message.emergency_phone_number);\n                    }\n                }\n            });\n\t    }\n\t}\n})",
+  "view": "Form"
+ }
+]

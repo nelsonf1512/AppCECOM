@@ -6,19 +6,47 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "naming_series",
+  "datos_de_la_ruta_section",
   "fecha",
   "origen",
-  "fechahora_inicio_de_labores",
-  "fechahora_de_llegada",
-  "conductor",
-  "column_break_ayrg",
+  "column_break_bxyp",
   "destino",
   "tiempo_de_la_ruta",
-  "fechahora_inicio_del_viaje",
+  "section_break_rseq",
+  "fechahora_de_llegada",
   "tiempo_de_viaje",
+  "es_caravana",
+  "column_break_ayrg",
+  "fechahora_inicio_de_labores",
+  "motivo",
+  "check_drogas",
+  "column_break_coqf",
+  "fechahora_inicio_del_viaje",
+  "check_sueno",
+  "conductor_section",
+  "conductor",
+  "departamento_de_conductor",
+  "column_break_hewq",
+  "empleado_conductor",
+  "no_telefonico_de_conductor",
+  "datos_del_vehiculo_section",
+  "veh\u00edculo",
+  "section_break_moxr",
+  "autorizador",
+  "no_de_emergencia",
+  "column_break_xuvc",
+  "nombre_del_autorizador",
+  "n\u00famero_de_empleado_de_autorizador",
+  "section_break_bhsy",
+  "elaborador_del_gerenciamiento",
+  "puesto_del_empleado",
+  "usuario_elaborador",
+  "column_break_cfqk",
+  "nombre_del_empleado",
+  "departamento_del_empleado",
   "section_break_tb4h",
-  "amended_from"
+  "amended_from",
+  "naming_series"
  ],
  "fields": [
   {
@@ -104,13 +132,178 @@
    "label": "Conductor",
    "options": "Driver",
    "reqd": 1
+  },
+  {
+   "fieldname": "departamento_de_conductor",
+   "fieldtype": "Data",
+   "label": "Departamento de Conductor",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "conductor.cell_number",
+   "fieldname": "no_telefonico_de_conductor",
+   "fieldtype": "Data",
+   "label": "No. Telefonico de Conductor",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "conductor.employee",
+   "fieldname": "empleado_conductor",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Empleado Conductor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "motivo",
+   "fieldtype": "Link",
+   "label": "Motivo",
+   "options": "Motivos de gerenciamiento de viaje",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_coqf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "veh\u00edculo",
+   "fieldtype": "Link",
+   "label": "Veh\u00edculo",
+   "options": "Vehicle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "datos_de_la_ruta_section",
+   "fieldtype": "Section Break",
+   "label": "Datos de la Ruta"
+  },
+  {
+   "fieldname": "column_break_bxyp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_rseq",
+   "fieldtype": "Section Break",
+   "label": "Datos generales"
+  },
+  {
+   "fieldname": "conductor_section",
+   "fieldtype": "Section Break",
+   "label": "Datos del conductor"
+  },
+  {
+   "fieldname": "column_break_hewq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "datos_del_vehiculo_section",
+   "fieldtype": "Section Break",
+   "label": "Datos del vehiculo"
+  },
+  {
+   "fieldname": "section_break_bhsy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "elaborador_del_gerenciamiento",
+   "fieldtype": "Link",
+   "label": "Elaborador del Gerenciamiento",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "elaborador_del_gerenciamiento.employee_name",
+   "fieldname": "nombre_del_empleado",
+   "fieldtype": "Data",
+   "label": "Nombre del empleado",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "elaborador_del_gerenciamiento.designation",
+   "fieldname": "puesto_del_empleado",
+   "fieldtype": "Data",
+   "label": "Puesto del empleado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_cfqk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "elaborador_del_gerenciamiento.department",
+   "fieldname": "departamento_del_empleado",
+   "fieldtype": "Data",
+   "label": "Departamento del empleado",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "elaborador_del_gerenciamiento.user_id",
+   "fieldname": "usuario_elaborador",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Usuario Elaborador",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "autorizador",
+   "fieldtype": "Link",
+   "label": "Autorizador",
+   "options": "Autorizadores de gerenciamiento de viaje",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_moxr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xuvc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "autorizador.nombre_del_empleado",
+   "fieldname": "nombre_del_autorizador",
+   "fieldtype": "Data",
+   "label": "Nombre del autorizador",
+   "read_only": 1
+  },
+  {
+   "fieldname": "no_de_emergencia",
+   "fieldtype": "Data",
+   "label": "No. de Emergencia",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "autorizador.empleado",
+   "fieldname": "n\u00famero_de_empleado_de_autorizador",
+   "fieldtype": "Data",
+   "label": "N\u00famero de empleado de autorizador",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "es_caravana",
+   "fieldtype": "Check",
+   "label": "\u00bfEs Caravana?"
+  },
+  {
+   "default": "0",
+   "fieldname": "check_drogas",
+   "fieldtype": "Check",
+   "label": "Ud. (Conductor) se encuentra libre del efecto de cualquier medicamento, droga o alcohol"
+  },
+  {
+   "default": "0",
+   "fieldname": "check_sueno",
+   "fieldtype": "Check",
+   "label": "Ud. (Conductor) durmi\u00f3 por lo menos 6 horas continuas en las \u00faltimas 24 hrs"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-15 17:14:15.280755",
+ "modified": "2026-04-16 16:36:20.410107",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",

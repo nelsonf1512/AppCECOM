@@ -1,0 +1,21 @@
+[
+ {
+  "allow_guest": 0,
+  "api_method": "obtener_empleado_por_conductor",
+  "cron_format": null,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Server Script",
+  "doctype_event": "Before Insert",
+  "enable_rate_limit": 0,
+  "event_frequency": "All",
+  "modified": "2026-04-16 13:58:56.105870",
+  "module": "App Cecom",
+  "name": "obtener_empleado_por_conductor",
+  "rate_limit_count": 5,
+  "rate_limit_seconds": 86400,
+  "reference_doctype": null,
+  "script": "def obtener_empleado_por_conductor(name):\n    # Consulta SQL directa\n    query = \"\"\"\n        SELECT \n            emp.*,\n            jefe.employee_name AS jefe_nombre,\n            jefe.user_id AS jefe_user_id,\n            jefe.designation AS jefe_designation,\n            jefe.department AS jefe_department\n        FROM `tabEmployee` emp\n        LEFT JOIN `tabEmployee` jefe ON emp.reports_to = jefe.name\n        WHERE emp.name = %s\n    \"\"\"\n    \n    empleado = frappe.db.sql(query, (name), as_dict=True)\n\n    # Verificar si se encontró algún resultado\n    if not empleado:\n        frappe.response['message'] = {\"error\": \"No se encontró empleado\"}\n    else:\n        # Retornar los datos del empleado\n        frappe.response['message'] = empleado[0]\n\nname = frappe.form_dict.get('name', ' ')\nobtener_empleado_por_conductor(name)",
+  "script_type": "API"
+ }
+]
