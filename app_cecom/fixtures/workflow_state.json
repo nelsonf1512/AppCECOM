@@ -1,0 +1,47 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-04-20 16:31:57.518438",
+  "name": "No autorizado",
+  "style": "Danger",
+  "workflow_state_name": "No autorizado"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-04-20 15:22:06.668220",
+  "name": "Finalizado",
+  "style": "Success",
+  "workflow_state_name": "Finalizado"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-04-20 15:21:45.583168",
+  "name": "Ingreso a geocerca",
+  "style": "Warning",
+  "workflow_state_name": "Ingreso a geocerca"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-04-20 15:20:54.510957",
+  "name": "En transito",
+  "style": "Info",
+  "workflow_state_name": "En transito"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-04-20 15:20:46.725460",
+  "name": "Abierto",
+  "style": "Success",
+  "workflow_state_name": "Abierto"
+ }
+]

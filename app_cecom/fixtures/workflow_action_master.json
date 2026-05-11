@@ -1,0 +1,30 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-04-20 15:19:11.439874",
+  "name": "Finalizar",
+  "workflow_action_name": "Finalizar"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-04-20 15:18:39.131526",
+  "name": "Geocerca",
+  "workflow_action_name": "Geocerca"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-04-20 15:17:13.844673",
+  "name": "En transito",
+  "workflow_action_name": "En transito"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-04-20 15:05:18.342336",
+  "name": "Rechazar",
+  "workflow_action_name": "Rechazar"
+ }
+]

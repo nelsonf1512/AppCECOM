@@ -245,9 +245,29 @@ app_license = "mit"
 fixtures = [
     {"doctype": "Client Script", "filters": [["module", "in", ["App Cecom"]]]},
     {"doctype": "Server Script", "filters": [["module", "in", ["App Cecom"]]]},
-    #{"doctype": "Workflow", "filters": [["name", "in", ["Boleta de seguridad"]]]},
-    #{"doctype": "Notification", "filters": [["name", "in", ["Boleta de seguridad, Cerrada"]]]},
-    #{"doctype": "Workflow State", "filters": [["name", "in", ["En proceso","CERRADA"]]]},
-    #{"doctype": "Workflow Action Master", "filters": [["name", "in", ["Cerrar","Redirigir"]]]},  
-    #{"doctype": "Role", "filters": [["name", "in", ["Cerrar_Boleta_Seguridad","Elabora_Boleta_Seguridad"]]]},  
+    {"doctype": "Workflow", "filters": [["name", "in", ["Gerenciamiento de viajes"]]]},
+    {"doctype": "Notification", "filters": [["document_type", "in", ["Gerenciamiento de viajes"]]]},
+    {"doctype": "Workflow State", "filters": [["name", "in", ["Abierto", "En transito", "Ingreso a geocerca", "Finalizado", "No autorizado"]]]},
+    {"doctype": "Workflow Action Master", "filters": [["name", "in", ["Rechazar", "En transito", "Geocerca", "Finalizar"]]]},  
+    {"doctype": "Role", "filters": [["name", "in", ["usuario_elabora_gerenciamiento_viajes","usuario_autoriza_gerenciamiento_viajes",
+    "usuario_transito_gerenciamiento_viajes", "usuario_geocerca_gerenciamiento_viajes", "usuario_finalizar_gerenciamiento_viajes", "usuario_sustentabilidad",
+    "usuario_autorizadores_gv","usuario_puntos_gv", "usuario_motivos_gv"]]]},  
+    {
+        "doctype": "Custom DocPerm",
+        "filters": [[
+            "role",
+            "in",
+            [
+                "usuario_elabora_gerenciamiento_viajes",
+                "usuario_autoriza_gerenciamiento_viajes",
+                "usuario_transito_gerenciamiento_viajes",
+                "usuario_geocerca_gerenciamiento_viajes",
+                "usuario_finalizar_gerenciamiento_viajes",
+                "usuario_sustentabilidad",
+                "usuario_autorizadores_gv",
+                "usuario_puntos_gv",
+                "usuario_motivos_gv"
+            ]
+        ]]
+    },
     ]

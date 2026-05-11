@@ -8,7 +8,9 @@
  "field_order": [
   "empleado",
   "nombre_del_empleado",
-  "nivel"
+  "nivel",
+  "usuario",
+  "compa\u00f1ia"
  ],
  "fields": [
   {
@@ -33,12 +35,30 @@
    "label": "Nombre del Empleado",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "fetch_from": "empleado.user_id",
+   "fieldname": "usuario",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Usuario",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "empleado.company",
+   "fieldname": "compa\u00f1ia",
+   "fieldtype": "Link",
+   "label": "Compa\u00f1ia",
+   "options": "Company",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-16 16:17:27.646723",
+ "modified": "2026-05-05 14:52:44.497086",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Autorizadores de gerenciamiento de viaje",
