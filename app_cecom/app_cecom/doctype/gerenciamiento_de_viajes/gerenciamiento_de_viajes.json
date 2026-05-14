@@ -171,6 +171,7 @@
    "fieldname": "conductor",
    "fieldtype": "Link",
    "label": "Conductor",
+   "link_filters": "[[\"Driver\",\"custom_compa\u00f1ia\",\"=\",\"eval:doc.compa\u00f1ia\"]]",
    "options": "Driver"
   },
   {
@@ -592,7 +593,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-05-07 16:54:13.216870",
+ "modified": "2026-05-14 08:18:52.886909",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",
