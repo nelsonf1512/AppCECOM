@@ -447,5 +447,66 @@
   "slack_webhook_url": null,
   "subject": "Gerenciamiento de Viaje Autorizado",
   "value_changed": "workflow_state"
+ },
+ {
+  "attach_print": 0,
+  "channel": "Email",
+  "condition": "doc.workflow_state==\"Cancelado\"",
+  "date_changed": null,
+  "days_in_advance": 0,
+  "docstatus": 0,
+  "doctype": "Notification",
+  "document_type": "Gerenciamiento de viajes",
+  "enabled": 1,
+  "event": "Value Change",
+  "is_standard": 0,
+  "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Cancelado</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de viaje ha sido cancelado:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Conductor:</strong> {{ doc.nombre_del_conductor or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Autorizador:</strong> {{ doc.nombre_del_autorizador or '' }}</td>\r\n                </tr>\r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
+  "message_type": "Markdown",
+  "method": null,
+  "modified": "2026-06-15 16:17:10.058850",
+  "module": null,
+  "name": "Gerenciamiento de Viaje Cancelado",
+  "print_format": null,
+  "property_value": null,
+  "recipients": [
+   {
+    "bcc": null,
+    "cc": null,
+    "condition": null,
+    "parent": "Gerenciamiento de Viaje Cancelado",
+    "parentfield": "recipients",
+    "parenttype": "Notification",
+    "receiver_by_document_field": "usuario_elaborador",
+    "receiver_by_role": "usuario_transito_gerenciamiento_viajes"
+   },
+   {
+    "bcc": null,
+    "cc": null,
+    "condition": "doc.riesgo_en_puntos>25",
+    "parent": "Gerenciamiento de Viaje Cancelado",
+    "parentfield": "recipients",
+    "parenttype": "Notification",
+    "receiver_by_document_field": "",
+    "receiver_by_role": "usuario_sustentabilidad"
+   },
+   {
+    "bcc": null,
+    "cc": null,
+    "condition": null,
+    "parent": "Gerenciamiento de Viaje Cancelado",
+    "parentfield": "recipients",
+    "parenttype": "Notification",
+    "receiver_by_document_field": "usuario_autorizador",
+    "receiver_by_role": null
+   }
+  ],
+  "send_system_notification": 0,
+  "send_to_all_assignees": 0,
+  "sender": "Eulah Gerhold",
+  "sender_email": "eulah.gerhold@ethereal.email",
+  "set_property_after_alert": null,
+  "slack_webhook_url": null,
+  "subject": "Gerenciamiento de Viaje Cancelado",
+  "value_changed": "workflow_state"
  }
 ]

@@ -1,13 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:descripci\u00f3n",
+ "autoname": "format:{descripci\u00f3n} - {compa\u00f1ia}",
  "creation": "2026-05-12 12:46:42.792031",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "descripci\u00f3n",
-  "tiempo"
+  "tiempo",
+  "compa\u00f1ia"
  ],
  "fields": [
   {
@@ -15,8 +16,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Descripci\u00f3n",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "tiempo",
@@ -24,16 +24,23 @@
    "in_list_view": 1,
    "label": "Tiempo",
    "reqd": 1
+  },
+  {
+   "fieldname": "compa\u00f1ia",
+   "fieldtype": "Link",
+   "label": "Compa\u00f1ia",
+   "options": "Company",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-12 12:47:41.417598",
+ "modified": "2026-06-15 16:09:28.326725",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Puntos de gerenciamiento de viaje",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -49,7 +56,10 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "descripci\u00f3n",
+ "translated_doctype": 1
 }
