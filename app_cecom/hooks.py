@@ -247,7 +247,8 @@ fixtures = [
     {"doctype": "Server Script", "filters": [["module", "in", ["App Cecom"]]]},
     {"doctype": "Workflow", "filters": [["name", "in", ["Gerenciamiento de viajes"]]]},
     {"doctype": "Notification", "filters": [["document_type", "in", ["Gerenciamiento de viajes"]]]},
-    {"doctype": "Workflow State", "filters": [["name", "in", ["Abierto", "En transito", "Ingreso a geocerca", "Finalizado", "No autorizado", "Autorizado QHSE", "Autorizado Dirección", "Autorizado CECOM"]]]},
+    {"doctype": "Workflow State", "filters": [["name", "in", ["Abierto", "En transito", "Ingreso a geocerca", "Finalizado", "No autorizado", 
+    "Autorizado QHSE", "Autorizado Dirección", "Autorizado CECOM"]]]},
     {"doctype": "Workflow Action Master", "filters": [["name", "in", ["Rechazar", "En transito", "Geocerca", "Finalizar"]]]},  
     {"doctype": "Role", "filters": [["name", "in", ["usuario_elabora_gerenciamiento_viajes","usuario_autoriza_gerenciamiento_viajes",
     "usuario_transito_gerenciamiento_viajes", "usuario_geocerca_gerenciamiento_viajes", "usuario_finalizar_gerenciamiento_viajes", "usuario_sustentabilidad",
@@ -267,7 +268,10 @@ fixtures = [
                 "usuario_sustentabilidad",
                 "usuario_autorizadores_gv",
                 "usuario_puntos_gv",
-                "usuario_motivos_gv"
+                "usuario_motivos_gv",
+                "usuario_autoriza_qhse_gerenciamiento_viajes",
+                "usuario_autoriza_cecom_gerenciamiento_viajes",
+                "usuario_autoriza_direccion_gerenciamiento_viajes"
             ]
         ]]
     },
