@@ -11,6 +11,7 @@
   "origen",
   "tiempo_de_la_ruta",
   "tiempo_real",
+  "tipo_de_viaje",
   "column_break_bxyp",
   "compa\u00f1ia",
   "destino",
@@ -41,6 +42,7 @@
   "datos_del_vehiculo_section",
   "veh\u00edculo",
   "placa_del_veh\u00edculo",
+  "es_vehiculo_pesado",
   "column_break_asfa",
   "compa\u00f1\u00eda_del_veh\u00edculo",
   "section_break_naxr",
@@ -78,6 +80,13 @@
   "n\u00famero_de_empleado_de_autorizador",
   "usuario_autorizador",
   "departamento_del_autorizador",
+  "section_break_qspq",
+  "empleado_autorizador_qhse",
+  "puesto_de_empleado_qhse",
+  "usuario_qhse",
+  "column_break_uygn",
+  "nombre_de_empleado_qhse",
+  "departamento_de_empleado_qhse",
   "datos_cecom_section",
   "n\u00famero_de_empleado_cecom",
   "puesto_de_empleado_cecom",
@@ -85,6 +94,13 @@
   "column_break_wcrk",
   "nombre_de_empleado_cecom",
   "departamento_de_empleado_cecom",
+  "section_break_wkhx",
+  "empleado_direccion",
+  "puesto_de_empleado_direccion",
+  "usuario_direccion",
+  "column_break_piix",
+  "nombre_de_empleado_direccion",
+  "departamento_de_empleado_direccion",
   "section_break_tb4h",
   "amended_from",
   "naming_series"
@@ -192,7 +208,6 @@
    "fetch_from": "conductor.employee",
    "fieldname": "empleado_conductor",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "Empleado Conductor",
    "read_only": 1
   },
@@ -294,6 +309,7 @@
    "options": "Autorizadores de gerenciamiento de viaje"
   },
   {
+   "depends_on": "eval:doc.hora_del_traslado=='Diurno (6:00h-18:00 Hrs.)' || (doc.es_vehiculo_pesado=='No' && doc.hora_del_traslado=='Nocturno (18:00-6:00 Hrs.)')",
    "fieldname": "section_break_moxr",
    "fieldtype": "Section Break",
    "label": "Datos autorizador"
@@ -597,8 +613,124 @@
   {
    "fieldname": "usuario_conductor",
    "fieldtype": "Link",
-   "hidden": 1,
    "label": "Usuario Conductor",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "veh\u00edculo.custom_es_unidad_pesada",
+   "fieldname": "es_vehiculo_pesado",
+   "fieldtype": "Data",
+   "label": "\u00bfEl veh\u00edculo es unidad pesada?",
+   "read_only": 1
+  },
+  {
+   "default": "Sencillo",
+   "fieldname": "tipo_de_viaje",
+   "fieldtype": "Select",
+   "label": "Tipo de viaje",
+   "options": "\nSencillo\nRedondo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_qspq",
+   "fieldtype": "Section Break",
+   "label": "Datos QHSE"
+  },
+  {
+   "fieldname": "empleado_autorizador_qhse",
+   "fieldtype": "Link",
+   "label": "N\u00famero de empleado",
+   "no_copy": 1,
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_uygn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "empleado_autorizador_qhse.employee_name",
+   "fieldname": "nombre_de_empleado_qhse",
+   "fieldtype": "Data",
+   "label": "Nombre de empleado",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "empleado_autorizador_qhse.designation",
+   "fieldname": "puesto_de_empleado_qhse",
+   "fieldtype": "Data",
+   "label": "Puesto de empleado",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "empleado_autorizador_qhse.department",
+   "fieldname": "departamento_de_empleado_qhse",
+   "fieldtype": "Data",
+   "label": "Departamento de empleado",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "empleado_autorizador_qhse.user_id",
+   "fieldname": "usuario_qhse",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Usuario",
+   "no_copy": 1,
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wkhx",
+   "fieldtype": "Section Break",
+   "label": "Datos Direcci\u00f3n"
+  },
+  {
+   "fieldname": "empleado_direccion",
+   "fieldtype": "Link",
+   "label": "N\u00famero de empleado",
+   "no_copy": 1,
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_piix",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "empleado_direccion.employee_name",
+   "fieldname": "nombre_de_empleado_direccion",
+   "fieldtype": "Data",
+   "label": "Nombre de empleado",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "empleado_direccion.designation",
+   "fieldname": "puesto_de_empleado_direccion",
+   "fieldtype": "Data",
+   "label": "Puesto de empleado",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "empleado_direccion.department",
+   "fieldname": "departamento_de_empleado_direccion",
+   "fieldtype": "Data",
+   "label": "Departamento de empleado",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "empleado_direccion.user_id",
+   "fieldname": "usuario_direccion",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Usuario Direccion",
+   "no_copy": 1,
    "options": "User",
    "read_only": 1
   }
@@ -607,7 +739,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-15 16:44:55.164014",
+ "modified": "2026-06-24 21:02:11.585100",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",

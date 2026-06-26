@@ -16,15 +16,15 @@
  {
   "docstatus": 0,
   "doctype": "Workflow Action Master",
-  "modified": "2026-04-20 15:17:13.844673",
-  "name": "En transito",
-  "workflow_action_name": "En transito"
+  "modified": "2026-04-20 15:05:18.342336",
+  "name": "Rechazar",
+  "workflow_action_name": "Rechazar"
  },
  {
   "docstatus": 0,
   "doctype": "Workflow Action Master",
-  "modified": "2026-04-20 15:05:18.342336",
-  "name": "Rechazar",
-  "workflow_action_name": "Rechazar"
+  "modified": "2026-04-20 15:17:13.844673",
+  "name": "En transito",
+  "workflow_action_name": "En transito"
  }
 ]
