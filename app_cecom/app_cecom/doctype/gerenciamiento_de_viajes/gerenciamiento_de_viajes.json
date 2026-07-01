@@ -23,31 +23,43 @@
   "fechahora_inicio_de_labores",
   "tiempo_de_viaje",
   "check_drogas",
+  "alcoholemia",
   "column_break_ayrg",
   "fechahora_inicio_del_viaje",
   "motivo",
   "check_sueno",
   "column_break_coqf",
   "fechahora_de_llegada",
+  "departamento",
   "es_caravana",
   "primera_vez",
-  "alcoholemia",
   "conductor_section",
+  "el_conductor_es_de_la_empresa",
   "conductor",
-  "departamento_de_conductor",
   "usuario_conductor",
   "licencia_conductor",
+  "conductor_libre",
+  "licencia_libre",
   "column_break_hewq",
   "nombre_del_conductor",
   "no_telefonico_de_conductor",
   "empleado_conductor",
+  "nombre_del_conductor_libre",
+  "no_telefonico_de_conductor_libre",
   "fecha_de_vencimiento",
+  "section_break_asyh",
+  "copiloto",
+  "column_break_dmqa",
+  "no_de_telefono_de_copiloto",
   "datos_del_vehiculo_section",
-  "veh\u00edculo",
-  "placa_del_veh\u00edculo",
-  "es_vehiculo_pesado",
-  "column_break_asfa",
+  "el_veh\u00edculo_es_de_la_empresa",
   "compa\u00f1\u00eda_del_veh\u00edculo",
+  "compa\u00f1ia_vehiculo_libre",
+  "placa_del_veh\u00edculo",
+  "column_break_asfa",
+  "veh\u00edculo",
+  "veh\u00edculo_libre",
+  "es_vehiculo_pesado",
   "section_break_naxr",
   "acompa\u00f1antes",
   "agregar_empleado",
@@ -104,6 +116,8 @@
   "column_break_piix",
   "nombre_de_empleado_direccion",
   "departamento_de_empleado_direccion",
+  "section_break_unhx",
+  "n\u00famero_de_empleado_finaliza",
   "section_break_tb4h",
   "amended_from",
   "naming_series"
@@ -188,17 +202,12 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.el_conductor_es_de_la_empresa ==\"S\u00ed\"",
    "fieldname": "conductor",
    "fieldtype": "Link",
    "label": "Conductor",
    "link_filters": "[[\"Driver\",\"custom_compa\u00f1ia\",\"=\",\"eval:doc.compa\u00f1ia\"],[\"Driver\",\"employee\",\"!=\",\"\"]]",
    "options": "Driver"
-  },
-  {
-   "fieldname": "departamento_de_conductor",
-   "fieldtype": "Data",
-   "label": "Departamento de Conductor",
-   "read_only": 1
   },
   {
    "fetch_from": "conductor.cell_number",
@@ -225,6 +234,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.el_veh\u00edculo_es_de_la_empresa ==\"S\u00ed\"",
    "fieldname": "veh\u00edculo",
    "fieldtype": "Link",
    "label": "Veh\u00edculo",
@@ -366,6 +376,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.el_veh\u00edculo_es_de_la_empresa ==\"S\u00ed\"",
    "fetch_from": "veh\u00edculo.custom_compa\u00f1ia",
    "fieldname": "compa\u00f1\u00eda_del_veh\u00edculo",
    "fieldtype": "Data",
@@ -373,11 +384,10 @@
    "read_only": 1
   },
   {
-   "fetch_from": "veh\u00edculo.custom_placas",
    "fieldname": "placa_del_veh\u00edculo",
    "fieldtype": "Data",
    "label": "Placa del veh\u00edculo",
-   "read_only": 1
+   "read_only_depends_on": "eval:doc.el_veh\u00edculo_es_de_la_empresa ==\"S\u00ed\" || !doc.el_veh\u00edculo_es_de_la_empresa"
   },
   {
    "default": "0",
@@ -622,11 +632,11 @@
    "read_only": 1
   },
   {
-   "fetch_from": "veh\u00edculo.custom_es_unidad_pesada",
    "fieldname": "es_vehiculo_pesado",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "label": "\u00bfEl veh\u00edculo es unidad pesada?",
-   "read_only": 1
+   "options": "\nS\u00ed\nNo",
+   "read_only_depends_on": "eval:doc.el_veh\u00edculo_es_de_la_empresa ==\"S\u00ed\" || !doc.el_veh\u00edculo_es_de_la_empresa"
   },
   {
    "default": "Sencillo",
@@ -739,28 +749,116 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.conductor ",
    "fieldname": "licencia_conductor",
    "fieldtype": "Select",
-   "label": "Licencia Conductor"
+   "label": "Licencia del conductor"
   },
   {
    "fieldname": "fecha_de_vencimiento",
    "fieldtype": "Date",
    "label": "Fecha de vencimiento",
-   "read_only": 1
+   "read_only_depends_on": "eval:doc.el_conductor_es_de_la_empresa ==\"S\u00ed\" || !doc.el_conductor_es_de_la_empresa"
   },
   {
    "default": "0",
    "fieldname": "alcoholemia",
    "fieldtype": "Check",
    "label": "\u00bfLe hicieron prueba de Alcoholemia?"
+  },
+  {
+   "fieldname": "section_break_asyh",
+   "fieldtype": "Section Break",
+   "label": "Datos del copiloto"
+  },
+  {
+   "fieldname": "copiloto",
+   "fieldtype": "Data",
+   "label": "Copiloto"
+  },
+  {
+   "fieldname": "column_break_dmqa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_de_telefono_de_copiloto",
+   "fieldtype": "Data",
+   "label": "No. de telefono de Copiloto",
+   "mandatory_depends_on": "eval:doc.copiloto"
+  },
+  {
+   "fieldname": "el_veh\u00edculo_es_de_la_empresa",
+   "fieldtype": "Select",
+   "label": "\u00bfEl veh\u00edculo es de la empresa?",
+   "options": "\nS\u00ed\nNo"
+  },
+  {
+   "depends_on": "eval:doc.el_veh\u00edculo_es_de_la_empresa ==\"No\"",
+   "fieldname": "veh\u00edculo_libre",
+   "fieldtype": "Data",
+   "label": "Veh\u00edculo"
+  },
+  {
+   "depends_on": "eval:doc.el_veh\u00edculo_es_de_la_empresa ==\"No\"",
+   "fieldname": "compa\u00f1ia_vehiculo_libre",
+   "fieldtype": "Data",
+   "label": "Compa\u00f1\u00eda del veh\u00edculo"
+  },
+  {
+   "fieldname": "el_conductor_es_de_la_empresa",
+   "fieldtype": "Select",
+   "label": "\u00bfEl Conductor es de la empresa?",
+   "options": "\nS\u00ed\nNo"
+  },
+  {
+   "fieldname": "departamento",
+   "fieldtype": "Link",
+   "label": "Departamento",
+   "options": "Department"
+  },
+  {
+   "depends_on": "eval:doc.el_conductor_es_de_la_empresa ==\"No\"",
+   "fieldname": "conductor_libre",
+   "fieldtype": "Data",
+   "label": "Conductor"
+  },
+  {
+   "depends_on": "eval:doc.el_conductor_es_de_la_empresa ==\"No\"",
+   "fieldname": "licencia_libre",
+   "fieldtype": "Data",
+   "label": "Licencia del conductor"
+  },
+  {
+   "depends_on": "eval:doc.el_conductor_es_de_la_empresa ==\"No\"",
+   "fieldname": "nombre_del_conductor_libre",
+   "fieldtype": "Data",
+   "label": "Nombre del conductor"
+  },
+  {
+   "depends_on": "eval:doc.el_conductor_es_de_la_empresa ==\"No\"",
+   "fieldname": "no_telefonico_de_conductor_libre",
+   "fieldtype": "Data",
+   "label": "No. Telefonico de Conductor"
+  },
+  {
+   "fieldname": "section_break_unhx",
+   "fieldtype": "Section Break",
+   "label": "Datos Finaliza"
+  },
+  {
+   "fieldname": "n\u00famero_de_empleado_finaliza",
+   "fieldtype": "Link",
+   "label": "N\u00famero de empleado",
+   "no_copy": 1,
+   "options": "Employee",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-01 10:17:24.145474",
+ "modified": "2026-07-01 12:27:48.657293",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",

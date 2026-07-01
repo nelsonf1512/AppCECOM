@@ -253,7 +253,7 @@ fixtures = [
     {"doctype": "Role", "filters": [["name", "in", ["usuario_elabora_gerenciamiento_viajes","usuario_autoriza_gerenciamiento_viajes",
     "usuario_transito_gerenciamiento_viajes", "usuario_geocerca_gerenciamiento_viajes", "usuario_finalizar_gerenciamiento_viajes", "usuario_sustentabilidad",
     "usuario_autorizadores_gv","usuario_puntos_gv", "usuario_motivos_gv", "usuario_autoriza_qhse_gerenciamiento_viajes", "usuario_autoriza_cecom_gerenciamiento_viajes",
-    "usuario_autoriza_direccion_gerenciamiento_viajes"]]]},  
+    "usuario_autoriza_direccion_gerenciamiento_viajes", "usuario_cecom_finalizar_gerenciamiento_viajes"]]]},  
     {
         "doctype": "Custom DocPerm",
         "filters": [[
@@ -271,7 +271,8 @@ fixtures = [
                 "usuario_motivos_gv",
                 "usuario_autoriza_qhse_gerenciamiento_viajes",
                 "usuario_autoriza_cecom_gerenciamiento_viajes",
-                "usuario_autoriza_direccion_gerenciamiento_viajes"
+                "usuario_autoriza_direccion_gerenciamiento_viajes",
+                "usuario_cecom_finalizar_gerenciamiento_viajes"
             ]
         ]]
     },
