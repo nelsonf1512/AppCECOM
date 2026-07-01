@@ -31,14 +31,17 @@
   "fechahora_de_llegada",
   "es_caravana",
   "primera_vez",
+  "alcoholemia",
   "conductor_section",
   "conductor",
   "departamento_de_conductor",
   "usuario_conductor",
+  "licencia_conductor",
   "column_break_hewq",
   "nombre_del_conductor",
   "no_telefonico_de_conductor",
   "empleado_conductor",
+  "fecha_de_vencimiento",
   "datos_del_vehiculo_section",
   "veh\u00edculo",
   "placa_del_veh\u00edculo",
@@ -613,6 +616,7 @@
   {
    "fieldname": "usuario_conductor",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Usuario Conductor",
    "options": "User",
    "read_only": 1
@@ -733,13 +737,30 @@
    "no_copy": 1,
    "options": "User",
    "read_only": 1
+  },
+  {
+   "fieldname": "licencia_conductor",
+   "fieldtype": "Select",
+   "label": "Licencia Conductor"
+  },
+  {
+   "fieldname": "fecha_de_vencimiento",
+   "fieldtype": "Date",
+   "label": "Fecha de vencimiento",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "alcoholemia",
+   "fieldtype": "Check",
+   "label": "\u00bfLe hicieron prueba de Alcoholemia?"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-24 21:02:11.585100",
+ "modified": "2026-07-01 10:17:24.145474",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",
