@@ -99,6 +99,7 @@
   "empleado_autorizador_qhse",
   "puesto_de_empleado_qhse",
   "usuario_qhse",
+  "n\u00famero_de_telefono",
   "column_break_uygn",
   "nombre_de_empleado_qhse",
   "departamento_de_empleado_qhse",
@@ -118,6 +119,11 @@
   "departamento_de_empleado_direccion",
   "section_break_unhx",
   "n\u00famero_de_empleado_finaliza",
+  "puesto_de_empleado_finaliza",
+  "usuario_finaliza",
+  "column_break_ylvq",
+  "nombre_de_empleado_finaliza",
+  "departamento_de_empleado_finaliza",
   "section_break_tb4h",
   "amended_from",
   "naming_series"
@@ -852,13 +858,59 @@
    "no_copy": 1,
    "options": "Employee",
    "read_only": 1
+  },
+  {
+   "fetch_from": "empleado_autorizador_qhse.cell_number",
+   "fieldname": "n\u00famero_de_telefono",
+   "fieldtype": "Data",
+   "label": "N\u00famero de telefono",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ylvq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "n\u00famero_de_empleado_finaliza.employee_name",
+   "fieldname": "nombre_de_empleado_finaliza",
+   "fieldtype": "Data",
+   "label": "Nombre de empleado finaliza",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "n\u00famero_de_empleado_finaliza.designation",
+   "fieldname": "puesto_de_empleado_finaliza",
+   "fieldtype": "Data",
+   "label": "Puesto de empleado finaliza",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "n\u00famero_de_empleado_finaliza.department",
+   "fieldname": "departamento_de_empleado_finaliza",
+   "fieldtype": "Data",
+   "label": "Departamento de empleado finaliza",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "n\u00famero_de_empleado_finaliza.user_id",
+   "fieldname": "usuario_finaliza",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Usuario finaliza",
+   "options": "User",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-01 12:27:48.657293",
+ "modified": "2026-07-01 13:09:03.499276",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",
