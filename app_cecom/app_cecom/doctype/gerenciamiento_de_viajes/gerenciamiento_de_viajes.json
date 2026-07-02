@@ -38,7 +38,6 @@
   "conductor",
   "usuario_conductor",
   "licencia_conductor",
-  "conductor_libre",
   "licencia_libre",
   "column_break_hewq",
   "nombre_del_conductor",
@@ -325,6 +324,7 @@
    "fieldname": "autorizador",
    "fieldtype": "Link",
    "label": "Autorizador",
+   "no_copy": 1,
    "options": "Autorizadores de gerenciamiento de viaje"
   },
   {
@@ -342,12 +342,14 @@
    "fieldname": "nombre_del_autorizador",
    "fieldtype": "Data",
    "label": "Nombre del autorizador",
+   "no_copy": 1,
    "read_only": 1
   },
   {
    "fieldname": "no_de_emergencia",
    "fieldtype": "Data",
    "label": "No. de Emergencia",
+   "no_copy": 1,
    "read_only": 1
   },
   {
@@ -356,6 +358,7 @@
    "fieldtype": "Link",
    "hidden": 1,
    "label": "N\u00famero de empleado de autorizador",
+   "no_copy": 1,
    "options": "Employee",
    "read_only": 1
   },
@@ -467,6 +470,7 @@
    "fieldtype": "Link",
    "hidden": 1,
    "label": "Usuario autorizador",
+   "no_copy": 1,
    "options": "User",
    "read_only": 1
   },
@@ -533,6 +537,7 @@
    "fieldname": "puesto_del_autorizador",
    "fieldtype": "Data",
    "label": "Puesto del autorizador",
+   "no_copy": 1,
    "read_only": 1
   },
   {
@@ -540,6 +545,7 @@
    "fieldname": "departamento_del_autorizador",
    "fieldtype": "Data",
    "label": "Departamento del autorizador",
+   "no_copy": 1,
    "read_only": 1
   },
   {
@@ -824,12 +830,6 @@
   },
   {
    "depends_on": "eval:doc.el_conductor_es_de_la_empresa ==\"No\"",
-   "fieldname": "conductor_libre",
-   "fieldtype": "Data",
-   "label": "Conductor"
-  },
-  {
-   "depends_on": "eval:doc.el_conductor_es_de_la_empresa ==\"No\"",
    "fieldname": "licencia_libre",
    "fieldtype": "Data",
    "label": "Licencia del conductor"
@@ -910,7 +910,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-01 13:09:03.499276",
+ "modified": "2026-07-02 13:45:44.605267",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",

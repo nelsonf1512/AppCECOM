@@ -12,15 +12,6 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2026-06-16 17:15:27.670596",
-  "name": "Autorizado Dirección",
-  "style": "Info",
-  "workflow_state_name": "Autorizado Dirección"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
   "modified": "2026-04-20 15:22:06.668220",
   "name": "Finalizado",
   "style": "Success",
@@ -30,10 +21,10 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2026-06-16 17:15:31.377774",
-  "name": "Autorizado CECOM",
-  "style": "Success",
-  "workflow_state_name": "Autorizado CECOM"
+  "modified": "2026-06-16 17:15:27.670596",
+  "name": "Autorizado Dirección",
+  "style": "Info",
+  "workflow_state_name": "Autorizado Dirección"
  },
  {
   "docstatus": 0,
@@ -48,10 +39,10 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2026-06-16 17:15:23.739123",
-  "name": "Autorizado QHSE",
-  "style": "Primary",
-  "workflow_state_name": "Autorizado QHSE"
+  "modified": "2026-06-16 17:15:31.377774",
+  "name": "Autorizado CECOM",
+  "style": "Success",
+  "workflow_state_name": "Autorizado CECOM"
  },
  {
   "docstatus": 0,
@@ -61,6 +52,15 @@
   "name": "En transito",
   "style": "Info",
   "workflow_state_name": "En transito"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-06-16 17:15:23.739123",
+  "name": "Autorizado QHSE",
+  "style": "Primary",
+  "workflow_state_name": "Autorizado QHSE"
  },
  {
   "docstatus": 0,
