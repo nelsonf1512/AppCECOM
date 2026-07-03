@@ -58,6 +58,7 @@
   "column_break_asfa",
   "veh\u00edculo",
   "veh\u00edculo_libre",
+  "tipo_de_veh\u00edculo",
   "es_vehiculo_pesado",
   "section_break_naxr",
   "acompa\u00f1antes",
@@ -904,13 +905,19 @@
    "label": "Usuario finaliza",
    "options": "User",
    "read_only": 1
+  },
+  {
+   "fieldname": "tipo_de_veh\u00edculo",
+   "fieldtype": "Data",
+   "label": "Tipo de veh\u00edculo",
+   "read_only_depends_on": "eval:doc.el_veh\u00edculo_es_de_la_empresa ==\"S\u00ed\" || !doc.el_veh\u00edculo_es_de_la_empresa"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-02 13:45:44.605267",
+ "modified": "2026-07-03 10:34:41.669465",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",
