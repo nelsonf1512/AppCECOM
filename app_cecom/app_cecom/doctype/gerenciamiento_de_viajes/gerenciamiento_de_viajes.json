@@ -827,6 +827,7 @@
    "fieldname": "departamento",
    "fieldtype": "Link",
    "label": "Departamento",
+   "link_filters": "[[\"Department\",\"company\",\"=\",\"eval:doc.compa\u00f1ia\"]]",
    "options": "Department"
   },
   {
@@ -917,7 +918,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-03 10:34:41.669465",
+ "modified": "2026-07-06 10:08:18.183216",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",
