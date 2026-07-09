@@ -450,7 +450,7 @@
   {
    "fieldname": "condiciones_de_la_via",
    "fieldtype": "Select",
-   "label": "Condiciones de la Via",
+   "label": "Condiciones de la V\u00eda",
    "options": "\nPavimentada\n<50% No Pavimentada\nNo Pavimentada"
   },
   {
@@ -918,7 +918,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-09 09:26:28.021949",
+ "modified": "2026-07-09 09:57:26.289442",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",
