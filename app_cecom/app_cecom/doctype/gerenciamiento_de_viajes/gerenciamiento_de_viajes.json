@@ -166,15 +166,13 @@
    "fieldname": "origen",
    "fieldtype": "Link",
    "label": "Origen",
-   "link_filters": "[[\"Branch\",\"company\",\"=\",\"eval:doc.compa\u00f1ia\"]]",
-   "options": "Branch"
+   "options": "Location"
   },
   {
    "fieldname": "destino",
    "fieldtype": "Link",
    "label": "Destino",
-   "link_filters": "[[\"Branch\",\"company\",\"=\",\"eval:doc.compa\u00f1ia\"]]",
-   "options": "Branch"
+   "options": "Location"
   },
   {
    "fieldname": "tiempo_de_la_ruta",
@@ -219,7 +217,7 @@
    "fetch_from": "conductor.cell_number",
    "fieldname": "no_telefonico_de_conductor",
    "fieldtype": "Data",
-   "label": "No. Telefonico de Conductor",
+   "label": "No. Telef\u00f3nico de Conductor",
    "read_only": 1
   },
   {
@@ -846,7 +844,7 @@
    "depends_on": "eval:doc.el_conductor_es_de_la_empresa ==\"No\"",
    "fieldname": "no_telefonico_de_conductor_libre",
    "fieldtype": "Data",
-   "label": "No. Telefonico de Conductor"
+   "label": "No. Telef\u00f3nico de Conductor"
   },
   {
    "fieldname": "section_break_unhx",
@@ -918,7 +916,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-06 10:08:18.183216",
+ "modified": "2026-07-09 09:06:54.030958",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",
