@@ -3,15 +3,6 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2026-04-20 16:31:57.518438",
-  "name": "No autorizado",
-  "style": "Danger",
-  "workflow_state_name": "No autorizado"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
   "modified": "2026-04-20 15:22:06.668220",
   "name": "Finalizado",
   "style": "Success",
@@ -61,6 +52,15 @@
   "name": "Autorizado QHSE",
   "style": "Primary",
   "workflow_state_name": "Autorizado QHSE"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-04-20 16:31:57.518438",
+  "name": "No autorizado",
+  "style": "Danger",
+  "workflow_state_name": "No autorizado"
  },
  {
   "docstatus": 0,

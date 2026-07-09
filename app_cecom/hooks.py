@@ -247,6 +247,8 @@ fixtures = [
     {"doctype": "Server Script", "filters": [["module", "in", ["App Cecom"]]]},
     {"doctype": "Workflow", "filters": [["name", "in", ["Gerenciamiento de viajes"]]]},
     {"doctype": "Notification", "filters": [["document_type", "in", ["Gerenciamiento de viajes"]]]},
+    {"doctype": "Workspace", "filters": [["module", "in", ["App Cecom"]]]},
+
     {"doctype": "Workflow State", "filters": [["name", "in", ["Abierto", "En transito", "Ingreso a geocerca", "Finalizado", "No autorizado", 
     "Autorizado QHSE", "Autorizado Dirección", "Autorizado CECOM"]]]},
     {"doctype": "Workflow Action Master", "filters": [["name", "in", ["Rechazar", "En transito", "Geocerca", "Finalizar"]]]},  

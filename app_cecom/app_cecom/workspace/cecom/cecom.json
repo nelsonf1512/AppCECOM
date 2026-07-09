@@ -1,0 +1,99 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"U5LtbCzGaU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">CECOM</span>\",\"col\":12}},{\"id\":\"rv6iLmr9wb\",\"type\":\"card\",\"data\":{\"card_name\":\"Gerenciamiento de viajes\",\"col\":4}}]",
+ "creation": "2026-07-09 12:26:20.303168",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "permission",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "CECOM",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gerenciamiento de viajes",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Motivos de gerenciamiento de viaje",
+   "link_count": 0,
+   "link_to": "Motivos de gerenciamiento de viaje",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Conductor",
+   "link_count": 0,
+   "link_to": "Driver",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Veh\u00edculo",
+   "link_count": 0,
+   "link_to": "Vehicle",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Puntos de gerenciamiento de viaje",
+   "link_count": 0,
+   "link_to": "Puntos de gerenciamiento de viaje",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Autorizadores de gerenciamiento de viaje",
+   "link_count": 0,
+   "link_to": "Autorizadores de gerenciamiento de viaje",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gerenciamiento de viajes",
+   "link_count": 0,
+   "link_to": "Gerenciamiento de viajes",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-07-09 12:31:18.231855",
+ "modified_by": "Administrator",
+ "module": "App Cecom",
+ "name": "CECOM",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 32.0,
+ "shortcuts": [],
+ "title": "CECOM"
+}
