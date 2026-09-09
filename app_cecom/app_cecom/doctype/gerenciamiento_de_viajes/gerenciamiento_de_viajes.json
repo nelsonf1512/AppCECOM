@@ -327,7 +327,7 @@
    "options": "Autorizadores de gerenciamiento de viaje"
   },
   {
-   "depends_on": "eval:doc.hora_del_traslado=='Diurno (6:00h-18:00 Hrs.)' || (doc.es_vehiculo_pesado=='No' && doc.hora_del_traslado=='Nocturno (18:00-6:00 Hrs.)')",
+   "depends_on": "eval:doc.hora_del_traslado=='Diurno (6:00h-19:00 Hrs.)' || (doc.es_vehiculo_pesado=='No' && doc.hora_del_traslado=='Nocturno (19:00-6:00 Hrs.)')",
    "fieldname": "section_break_moxr",
    "fieldtype": "Section Break",
    "label": "Datos autorizador"
@@ -586,7 +586,7 @@
    "fieldname": "hora_del_traslado",
    "fieldtype": "Select",
    "label": "Hora del Traslado",
-   "options": "\nDiurno (6:00h-18:00 Hrs.)\nNocturno (18:00-6:00 Hrs.)",
+   "options": "\nDiurno (6:00h-19:00 Hrs.)\nNocturno (19:00-6:00 Hrs.)",
    "read_only": 1
   },
   {
@@ -916,7 +916,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-01 12:06:14.381900",
+ "modified": "2026-09-09 09:03:55.351002",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",
