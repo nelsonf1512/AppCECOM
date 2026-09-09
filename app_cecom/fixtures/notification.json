@@ -55,7 +55,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Devuelto</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha sido devuelto:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                                \r\n                <tr>\r\n                    <td><strong>Motivo:</strong> {% if comments %} {{ comments[-1].comment }} {% endif %}</td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:46:04.999605",
+  "modified": "2026-09-09 10:55:02.212954",
   "module": null,
   "name": "Gerenciamiento de Viaje Devuelto",
   "print_format": null,
@@ -83,7 +83,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viaje Devuelto",
     "parentfield": "recipients",
@@ -116,7 +116,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Rechazado</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha sido rechazado:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                                \r\n                <tr>\r\n                    <td><strong>Motivo:</strong> {% if comments %} {{ comments[-1].comment }} {% endif %}</td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:45:16.624999",
+  "modified": "2026-09-09 10:54:48.927414",
   "module": null,
   "name": "Gerenciamiento de Viaje Rechazado",
   "print_format": null,
@@ -154,7 +154,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viaje Rechazado",
     "parentfield": "recipients",
@@ -184,7 +184,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viaje Rechazado",
     "parentfield": "recipients",
@@ -217,7 +217,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Tu Gerenciamiento de Viajes, Autorizado</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha sido autorizado:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:43:45.701005",
+  "modified": "2026-09-09 10:44:59.059678",
   "module": null,
   "name": "Gerenciamiento de Viaje Autorizado",
   "print_format": null,
@@ -245,7 +245,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viaje Autorizado",
     "parentfield": "recipients",
@@ -278,7 +278,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viajes, Iniciado</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha iniciado:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:44:20.120150",
+  "modified": "2026-09-09 10:45:22.488915",
   "module": null,
   "name": "Gerenciamiento de Viajes Iniciado",
   "print_format": null,
@@ -286,7 +286,7 @@
   "recipients": [
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viajes Iniciado",
     "parentfield": "recipients",
@@ -316,7 +316,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viajes Iniciado",
     "parentfield": "recipients",
@@ -346,7 +346,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viajes Iniciado",
     "parentfield": "recipients",
@@ -379,7 +379,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viajes, Ingreso a Geocerca</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha ingresado a la geocerca:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:46:14.150468",
+  "modified": "2026-09-09 10:43:46.360818",
   "module": null,
   "name": "Gerenciamiento de Viajes ingreso a Geocerca",
   "print_format": null,
@@ -387,7 +387,7 @@
   "recipients": [
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viajes ingreso a Geocerca",
     "parentfield": "recipients",
@@ -417,7 +417,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viajes ingreso a Geocerca",
     "parentfield": "recipients",
@@ -447,7 +447,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viajes ingreso a Geocerca",
     "parentfield": "recipients",
@@ -480,7 +480,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viajes, Finalizado</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha finalizado:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:44:30.912003",
+  "modified": "2026-09-09 10:56:49.288309",
   "module": null,
   "name": "Gerenciamiento de Viajes Finalizado",
   "print_format": null,
@@ -488,7 +488,7 @@
   "recipients": [
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viajes Finalizado",
     "parentfield": "recipients",
@@ -518,7 +518,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viajes Finalizado",
     "parentfield": "recipients",
@@ -548,7 +548,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viajes Finalizado",
     "parentfield": "recipients",
@@ -581,7 +581,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Enviado para su Autorización</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de viaje ha sido enviado para su autorización:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Conductor:</strong>         \r\n                    {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:40:22.344432",
+  "modified": "2026-09-09 10:44:47.145788",
   "module": null,
   "name": "Gerenciamiento de Viaje Enviado",
   "print_format": null,
@@ -609,7 +609,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viaje Enviado",
     "parentfield": "recipients",
@@ -642,7 +642,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Autorizado</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha sido autorizado:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:44:45.787019",
+  "modified": "2026-09-09 10:42:55.085023",
   "module": null,
   "name": "Gerenciamiento de Viaje Autorizado CECOM",
   "print_format": null,
@@ -650,7 +650,7 @@
   "recipients": [
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viaje Autorizado CECOM",
     "parentfield": "recipients",
@@ -670,7 +670,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viaje Autorizado CECOM",
     "parentfield": "recipients",
@@ -703,7 +703,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Cancelado</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de viaje ha sido cancelado:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                                               \r\n                <tr>\r\n                    <td><strong>Motivo:</strong> {% if comments %} {{ comments[-1].comment }} {% endif %}</td>\r\n                </tr>\r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:44:56.133591",
+  "modified": "2026-09-09 10:54:36.828462",
   "module": null,
   "name": "Gerenciamiento de Viaje Cancelado",
   "print_format": null,
@@ -741,7 +741,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viaje Cancelado",
     "parentfield": "recipients",
@@ -771,7 +771,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viaje Cancelado",
     "parentfield": "recipients",
@@ -845,7 +845,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Autorizado por QHSE</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de viaje esta pendiente para su autorización:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:11:09.158544",
+  "modified": "2026-09-09 10:44:25.602400",
   "module": null,
   "name": "Gerenciamiento de Viaje Autorizado por QHSE",
   "print_format": null,
@@ -853,7 +853,7 @@
   "recipients": [
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viaje Autorizado por QHSE",
     "parentfield": "recipients",
@@ -886,7 +886,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Autorizado por QHSE</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha sido autorizado por QHSE:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:45:44.279992",
+  "modified": "2026-09-09 10:54:55.589319",
   "module": null,
   "name": "Gerenciamiento de Viaje Autorizado por QHSE (elaborador)",
   "print_format": null,
@@ -914,7 +914,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viaje Autorizado por QHSE (elaborador)",
     "parentfield": "recipients",
@@ -988,7 +988,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Autorizado por CECOM</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha sido autorizado por CECOM:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:40:07.057571",
+  "modified": "2026-09-09 10:44:37.942886",
   "module": null,
   "name": "Gerenciamiento de Viaje Autorizado por CECOM (elaborador)",
   "print_format": null,
@@ -1016,7 +1016,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viaje Autorizado por CECOM (elaborador)",
     "parentfield": "recipients",
@@ -1049,7 +1049,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Autorizado por Dirección</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha sido autorizado por dirección:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:10:49.839942",
+  "modified": "2026-09-09 10:44:00.220193",
   "module": null,
   "name": "Gerenciamiento de Viaje Autorizado por Direccion",
   "print_format": null,
@@ -1057,7 +1057,7 @@
   "recipients": [
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": null,
     "parent": "Gerenciamiento de Viaje Autorizado por Direccion",
     "parentfield": "recipients",
@@ -1090,7 +1090,7 @@
   "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Gerenciamiento de Viaje, Autorizado por Dirección</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha sido autorizado por dirección:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
   "message_type": "Markdown",
   "method": null,
-  "modified": "2026-07-02 11:44:03.799385",
+  "modified": "2026-09-09 10:45:05.699333",
   "module": null,
   "name": "Gerenciamiento de Viaje Autorizado por Dirección (elaborador)",
   "print_format": null,
@@ -1118,7 +1118,7 @@
    },
    {
     "bcc": null,
-    "cc": null,
+    "cc": "cecom.carmen@mbcorp.mx",
     "condition": "doc.el_conductor_es_de_la_empresa==\"No\"",
     "parent": "Gerenciamiento de Viaje Autorizado por Dirección (elaborador)",
     "parentfield": "recipients",
