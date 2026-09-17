@@ -165,12 +165,14 @@
   {
    "fieldname": "origen",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "label": "Origen",
    "options": "Location"
   },
   {
    "fieldname": "destino",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "label": "Destino",
    "options": "Location"
   },
@@ -916,7 +918,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-09 09:03:55.351002",
+ "modified": "2026-09-17 12:22:14.550794",
  "modified_by": "Administrator",
  "module": "App Cecom",
  "name": "Gerenciamiento de viajes",
