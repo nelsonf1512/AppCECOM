@@ -1135,5 +1135,56 @@
   "slack_webhook_url": null,
   "subject": "Gerenciamiento de Viaje, Autorizado por Dirección",
   "value_changed": "workflow_state"
+ },
+ {
+  "attach_print": 0,
+  "channel": "Email",
+  "condition": "True",
+  "date_changed": null,
+  "days_in_advance": 0,
+  "docstatus": 0,
+  "doctype": "Notification",
+  "document_type": "Gerenciamiento de viajes",
+  "enabled": 1,
+  "event": "Custom",
+  "is_standard": 0,
+  "message": "<table style=\"width:100%; max-width:600px; margin:0 auto; font-family:Arial, sans-serif; border-collapse:collapse; background-color:#f9f9f9; border-radius:10px; overflow:hidden;\">\r\n    <tr>\r\n        <td style=\"background-color:#000000; color:white; text-align:center; padding:20px;\">\r\n            <img src=\"https://cdn-icons-png.flaticon.com/512/1827/1827295.png\" alt=\"Alerta\" width=\"40\" style=\"vertical-align:middle;\">\r\n            <h2 style=\"margin:10px 0 0; font-size:24px; color:white;\">NOTIFICACIÓN</h2>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"padding:30px 20px;\">\r\n            <h3 style=\"text-align:center; margin:0 0 20px;\">Incidencia en Gerenciamiento de Viajes</h3>\r\n            <p style=\"margin:0 0 20px;\">\r\n                Por medio de la presente, se le notifica que el gerenciamiento de Viaje ha tenido una incidencia:\r\n            </p>\r\n            <table style=\"width:100%; font-size:14px; line-height:1.6;\">\r\n                <tr>\r\n                    <td><strong>Folio:</strong> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Solicitado Por:</strong> {{ doc.nombre_del_empleado or '' }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <td>\r\n                        <strong>Conductor:</strong>\r\n                        {{ (doc.nombre_del_conductor if doc.el_conductor_es_de_la_empresa == \"Sí\" else doc.nombre_del_conductor_libre) or '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Origen:</strong> {{ doc.origen or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Destino:</strong> {{ doc.destino or '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha:</strong> {{ frappe.utils.formatdate(doc.fecha, \"dd/MM/yyyy\") if doc.fecha else '' }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora Inicio del Viaje:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_inicio_del_viaje, \"dd/MM/yyyy HH:mm\") if doc.fechahora_inicio_del_viaje else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <td><strong>Fecha/Hora de Llegada:</strong>\r\n                        {{ frappe.utils.format_datetime(doc.fechahora_de_llegada, \"dd/MM/yyyy HH:mm\") if doc.fechahora_de_llegada else '' }}\r\n                    </td>\r\n                </tr>\r\n                \r\n                                                \r\n                <tr>\r\n                    <td><strong>Incidencia:</strong> {% if comments %} {{ comments[-1].comment }} {% endif %}</td>\r\n                </tr>\r\n                \r\n            </table>\r\n            <p style=\"margin-top:30px; font-size:12px; color:#666;\">\r\n                <em>Aviso: Este es un correo de notificación automática, por favor, no responda a este mensaje.</em>\r\n            </p>\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td style=\"background-color:#f0f0f0; text-align:center; padding:15px;\">\r\n            <img src=\"https://erpnext.com/files/erpnext-logo-blue-v2.png\" alt=\"ERPNext\" width=\"120\">\r\n        </td>\r\n    </tr>\r\n</table>\r\n",
+  "message_type": "Markdown",
+  "method": null,
+  "modified": "2026-11-03 11:17:44.004750",
+  "module": null,
+  "name": "Gerenciamiento de Viajes Incidencia",
+  "print_format": null,
+  "property_value": null,
+  "recipients": [
+   {
+    "bcc": null,
+    "cc": null,
+    "condition": "doc.hora_del_traslado==\"Nocturno (19:00-6:00 Hrs.)\"",
+    "parent": "Gerenciamiento de Viajes Incidencia",
+    "parentfield": "recipients",
+    "parenttype": "Notification",
+    "receiver_by_document_field": "",
+    "receiver_by_role": "usuario_autoriza_direccion_gerenciamiento_viajes"
+   },
+   {
+    "bcc": null,
+    "cc": null,
+    "condition": "doc.hora_del_traslado==\"Diurno (6:00h-19:00 Hrs.)\"",
+    "parent": "Gerenciamiento de Viajes Incidencia",
+    "parentfield": "recipients",
+    "parenttype": "Notification",
+    "receiver_by_document_field": "usuario_autorizador",
+    "receiver_by_role": null
+   }
+  ],
+  "send_system_notification": 1,
+  "send_to_all_assignees": 0,
+  "sender": "Eulah Gerhold",
+  "sender_email": "eulah.gerhold@ethereal.email",
+  "set_property_after_alert": null,
+  "slack_webhook_url": null,
+  "subject": "Incidencia en Gerenciamiento de Viajes",
+  "value_changed": "workflow_state"
  }
 ]
